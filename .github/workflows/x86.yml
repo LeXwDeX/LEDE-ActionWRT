@@ -94,7 +94,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a -f -p helloworld && ./scripts/feeds install -a
+      run: cd openwrt && ./scripts/feeds install -a
 
     - name: Feeds Check again
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a

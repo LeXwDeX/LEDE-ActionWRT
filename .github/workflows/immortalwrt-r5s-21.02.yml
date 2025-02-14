@@ -2,13 +2,11 @@
 # Copyright (c) 2023 Lex
 #
 # This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
 #
 # https://github.com/HEXtoDEC/ActionWRT
-# Description: Build OpenWrt for R5S using GitHub Actions
-#
+# Description: Build ImmortalWrt for R5S using GitHub Actions
 
-name: Build LEDE-R5S
+name: Build ImmortalWrt-R5S
 
 on:
   repository_dispatch:
@@ -20,10 +18,10 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: v21.02.7
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: SEED/R5S/seed.config
+  CONFIG_FILE: SEED/R5S/seed_21.02.config
   DIY_P1_SH: SCRIPTS/R5S/r5s-part1.sh
   DIY_P2_SH: SCRIPTS/R5S/r5s-part2.sh
   UPLOAD_FIRMWARE: true
@@ -94,7 +92,7 @@ jobs:
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd openwrt && ./scripts/feeds install -a -f -p helloworld && ./scripts/feeds install -a
 
     - name: Feeds Check again
       run: cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
@@ -156,7 +154,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d")-R5S" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d")-ImmortalWrt-R5S" >> $GITHUB_OUTPUT
         touch release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 

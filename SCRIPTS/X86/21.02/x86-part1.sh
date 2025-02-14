@@ -6,7 +6,7 @@
 # See /LICENSE for more information.
 #
 # https://github.com/HEXtoDEC/ActionWRT
-# File name: imm-part1.sh
+# File name: lede-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 

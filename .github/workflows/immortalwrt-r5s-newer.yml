@@ -2,13 +2,11 @@
 # Copyright (c) 2023 Lex
 #
 # This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
 #
 # https://github.com/HEXtoDEC/ActionWRT
-# Description: Build OpenWrt for R5S using GitHub Actions
-#
+# Description: Build ImmortalWrt for R5S using GitHub Actions
 
-name: Build LEDE-R5S
+name: Build ImmortalWrt-R5S
 
 on:
   repository_dispatch:
@@ -20,7 +18,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: SEED/R5S/seed.config
@@ -156,7 +154,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d")-R5S" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d")-ImmortalWrt-R5S" >> $GITHUB_OUTPUT
         touch release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
