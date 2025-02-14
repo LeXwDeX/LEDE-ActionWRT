@@ -154,7 +154,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d")-ImmortalWrt-R5S" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d")-ImmortalWrt-R5S-2102" >> $GITHUB_OUTPUT
         touch release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
