@@ -8,7 +8,7 @@
 # Description: Build OpenWrt for R5S using GitHub Actions
 #
 
-name: Build LEDE-X86
+name: Build ImmortalWrt-X86-2102
 
 on:
   repository_dispatch:

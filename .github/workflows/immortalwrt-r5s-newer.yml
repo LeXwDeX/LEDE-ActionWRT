@@ -6,7 +6,7 @@
 # https://github.com/HEXtoDEC/ActionWRT
 # Description: Build ImmortalWrt for R5S using GitHub Actions
 
-name: Build ImmortalWrt-R5S
+name: Build ImmortalWrt-R5S-Newer
 
 on:
   repository_dispatch:
