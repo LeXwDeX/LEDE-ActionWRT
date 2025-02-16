@@ -1,0 +1,11 @@
+# 忽略 Log 目录
+Log/
+
+# 忽略临时文件
+*.tmp
+*.log
+.DS_Store
+
+# 忽略编译生成的文件
+build/
+dist/
