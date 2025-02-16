@@ -153,7 +153,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d")-R5S-latest" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d")-LEDE-R5S-latest" >> $GITHUB_OUTPUT
         touch release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
